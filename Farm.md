@@ -33,5 +33,5 @@ From there I managed customers payment processes and delivery routes, liasing wi
 I know the business intimately and have the data to build a number of informed personas.
 
 ###### The bigger picture
-With covid the consumer became aware of food scarcity. Brext and environmental change could exacabate this. During lockdown customers and supermarkets alike turned to local producers and suppliers. This a clear gap in the market for software which would allow small scale producers and suppliers to easily manage their customers.
+With covid the consumer became aware of food scarcity. Brext and environmental change could exacabate this. During lockdown customers and supermarkets alike turned to local producers and suppliers. There a clear gap in the market for software/serice which would allow small scale producers and suppliers to easily manage their customers.
 
