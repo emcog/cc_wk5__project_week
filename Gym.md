@@ -4,9 +4,9 @@ A local ~gym~ farm has asked you to build a piece of software to help them to ma
 
 #### MVP
 
-- The app should allow the ~gym~ to create and edit Customers
-- The app should allow the ~gym~ to create and edit Deliveries
-- The app should allow the ~gym~ to book ~members~ customers on specific ~classes~ deliveries
+- The app should allow the ~gym~ farm to create and edit Customers
+- The app should allow the ~gym~ farm to create and edit Deliveries
+- The app should allow the ~gym~ farm to book ~members~ customers on specific ~classes~ deliveries
 - The app should show a list of ~all upcoming classes~ any changes to regular deliveries
 - The app should show all ~members~ customers that are booked ~in for a particular class~ on to a particular delivery
 
