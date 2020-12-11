@@ -13,6 +13,7 @@ A local ~gym~ farm has asked you to build a piece of software to help them to ma
 #### Inspired By
 
 [Glofox](https://www.glofox.com/club-solution/), [Pike13](https://www.pike13.com/pike13-scheduling-software-demo)
+[Bandcamp](https://bandcamp.com)
 
 #### Possible Extensions
 
