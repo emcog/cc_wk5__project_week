@@ -52,7 +52,32 @@ With covid the consumer became aware of food scarcity. Brext and environmental c
 ![Farmer](img/wireframe_farmer.png)
 ![Delivery driver](img/wireframe_driver.png)
 
-img/behaviour__and__data-flow__@50%.png
+
+## Farm data requirements
+
+The farm makes money by selling seasonal subscriptions of veg boxes which it delivers to its customers
+
+The farm has seasons
+
+A season has weeks of the year
+
+A veg box subscription exists for a season
+
+A customer buys a veg box subscription
+
+A veg box is delivered weekly for the whole of the season
+
+A customer has a delivery day
+
+A customer might make a change to their delivery information
+
+A customer’s delivery day could change, on occasion.
+
+Each customer has a name, address, email address
+
+A delivery day has many drop offs each day, a drop off has one delivery day
+
+A drop off has a delivery day and an address 
 
 
-img/behaviour__and__data-flow__rh_only.png
+![Simple entity relationship diagram](img/entity_relationship_diagram_01.png)
