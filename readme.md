@@ -1,3 +1,7 @@
+#Small farm 
+
+## Bief
+
 ### ~Gym~ Farm
 
 A local ~gym~ farm has asked you to build a piece of software to help them to manage ~memberships~ vegbox subscriptions, and register ~members for~ customers to ~classes~ deliveries.
@@ -35,3 +39,20 @@ I know the business intimately and have the data to build a number of informed p
 ###### The bigger picture
 With covid the consumer became aware of food scarcity. Brext and environmental change could exacabate this. During lockdown customers and supermarkets alike turned to local producers and suppliers. There a clear gap in the market for software/serice which would allow small scale producers and suppliers to easily manage their customers.
 
+
+## Planning
+
+![Behaviour and data flow](img/behaviour__and__data-flow.png)
+![Behaviour and data flow](img/behaviour__and__data-flow__@50%.png)
+![Behaviour and data flow](img/behaviour__and__data-flow__rh_only.png)
+![Behaviour and data flow](img/behaviour__and__data-flow_LH-only.png)
+
+
+## Wireframes
+![Farmer](img/wireframe_farmer.png)
+![Delivery driver](img/wireframe_driver.png)
+
+img/behaviour__and__data-flow__@50%.png
+
+
+img/behaviour__and__data-flow__rh_only.png
