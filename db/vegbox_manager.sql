@@ -1,8 +1,6 @@
-DROP TABLE IF EXISTS deliveries;
 DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS delivery_days;
 DROP TABLE IF EXISTS addresses;
-
--- observe running/creation order when referncing FKs
 
 
 
@@ -16,21 +14,27 @@ CREATE TABLE addresses (
 
 
 
+CREATE TABLE delivery_days (
+    id SERIAL PRIMARY KEY,
+    day_of_week VARCHAR(255)
+);
+
+
+-- CREATE TABLE subscription (
+--     id SERIAL PRIMARY KEY,
+--     subscription
+--     -- pass Null on creeation of customer to indicate not paid
+--     -- csa_subscription BOOLEAN,
+-- )
+
+
 CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255),
     first_name VARCHAR(255),
     -- pass Null on creeation of customer to indicate not paid
-    csa_subscription BOOLEAN,
-    -- Foreign key
-    address_id INT REFERENCES addresses(id)
-);
-
-
-
-CREATE TABLE deliveries (
-    id SERIAL PRIMARY KEY,
-    day_of_week VARCHAR(255),
-    -- day_of_week VARCHAR CONSTRAINT three_characters CHECK (day_of_week = 3),
-    vegboxes INT CHECK (vegboxes >= 0)
+    -- csa_subscription BOOLEAN,
+    -- Foreign keys
+    address_id INT REFERENCES addresses(id),
+    delivery_day_id INT REFERENCES delivery_days(id)
 );
