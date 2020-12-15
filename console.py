@@ -1,6 +1,20 @@
 import pdb
 from models.customer import Customer
 from models.delivery import Delivery
-from models.address import Address
+from models.address import Address  
 
-# ––––––––––––––––––> todo get rest from console.py
+import repositories.repository_customer as repository_customer
+
+# delete all customer data
+# delete all address data
+
+# create address
+address_1 = Address('Knowledge Cottage', 'The Orchard', 'Crail', 'HE3 H11')
+# create customer object 
+customer_1 = Customer('Eve', 'eve@genesis.god')
+# save customer and address to db
+repository_customer.save(address_1, customer_1)
+
+
+# display data to make sure its written
+repository_customer.select_all()

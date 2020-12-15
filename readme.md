@@ -81,3 +81,10 @@ A drop off has a delivery day and an address
 
 
 ![Simple entity relationship diagram](img/entity_relationship_diagram_01.png)
+
+
+
+## Commands
+Terminal:
+    createdb <database>
+    psql -d <database> -f <file> {{ psql -d vegbox -f db/vegbox_manager.sql }}
