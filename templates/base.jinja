@@ -11,9 +11,13 @@
     <nav>
       <ul class="menu">
         <li><a href="/">Home</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/driver">Driver</a></li>
         <li><a href="/farmer">Farmer</a></li>
       </ul>
     </nav>
+  {% block user_nav %}
+  {% endblock %}
   </header>
   <div class="container">
     {% block content %}

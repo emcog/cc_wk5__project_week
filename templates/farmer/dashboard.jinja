@@ -5,8 +5,10 @@
     <a href='/farmer/friday'>Friday</a>
 {% endblock %}
 {% block content %}
-
-Please select day
-
+<h1>23</h1>
+{{ total_vegboxes_for_today }}
+{% for customer in todays_harvest %}
+<span>{{  customer.first_name }}</span>
+{% endfor %}
 
 {% endblock %}

@@ -34,4 +34,4 @@ repository_customer.save(address_5, 3, 3, customer_5)
 
 
 # display data to make sure its written
-# repository_customer.select_all()
+print(repository_customer.select_by_day(1))

@@ -55,15 +55,22 @@ def select_by_day(delivery_day_id):
 
     sql = 'SELECT * FROM customers WHERE delivery_day_id = %s'
     values =[delivery_day_id]
-    results = run_sql(sql, delivery_day_id)
+    results = run_sql(sql, values)
 
     for row in results:
         # this depends on how its listed on init in class
-        #  def __init__( self, first_name, email, subscription_type = None, id = None ):
-        customer = Customer(row['first_name'], row['email'], row['subscription_type'], row['delivery_day_id'], row['id'])
+        #  e.g. def __init__( self, first_name, email, subscription_type = None, id = None ):
+        customer = Customer(row['first_name'], row['email'], row['subscription_id'], row['delivery_day_id'], row['id'])
         customers.append(customer)
     return customers
 
+
+def total_veg_box_by_day(delivery_day_id):
+    sql = 'SELECT COUNT(*) FROM customers WHERE delivery_day_id = %s GROUP BY delivery_day_id'
+    values =[delivery_day_id]
+    results = run_sql(sql, values)
+    # returns a dictionary, ['count'] references column name
+    return results[0]['count']
 
 
 
@@ -73,3 +80,12 @@ def delete_all():
     sql_delivery_day = 'DELETE  FROM delivery_day'
     sql_customer = 'DELETE  FROM customers'
     run_sql(sql_address, sql_customer)
+
+
+def get_delivery_day_id(day):
+    # SELECT id FROM delivery_days WHERE day_of_week = 'monday'
+    sql = 'SELECT id FROM delivery_days WHERE day_of_week = %s'
+    values = [day]
+    results = run_sql(sql, values)
+
+    return results[0]['id']

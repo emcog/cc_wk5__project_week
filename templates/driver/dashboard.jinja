@@ -1,0 +1,14 @@
+{% extends "base.jinja" %}
+{% block user_nav %} 
+    <a href='/driver/monday'>Monday</a>
+    <a href='/driver/wednesday'>Wednesday</a>
+    <a href='/driver/friday'>Friday</a>
+{% endblock %}
+{% block content %}
+<h1>23</h1>
+{{ total_vegboxes_for_today }}
+{% for customer in todays_harvest %}
+<span>{{  customer.first_name }}</span>
+{% endfor %}
+
+{% endblock %}
