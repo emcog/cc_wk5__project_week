@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS customers;
-DROP TABLE IF EXISTS delivery_days;
+-- DROP TABLE IF EXISTS delivery_days;
+-- DROP TABLE IF EXISTS subscription;
 DROP TABLE IF EXISTS addresses;
 
 
@@ -13,19 +14,19 @@ CREATE TABLE addresses (
 );
 
 
-
+-- populate manually using postico
 CREATE TABLE delivery_days (
     id SERIAL PRIMARY KEY,
     day_of_week VARCHAR(255)
 );
 
 
--- CREATE TABLE subscription (
---     id SERIAL PRIMARY KEY,
---     subscription
---     -- pass Null on creeation of customer to indicate not paid
---     -- csa_subscription BOOLEAN,
--- )
+CREATE TABLE subscription (
+    id SERIAL PRIMARY KEY,
+    -- subscription
+    -- pass Null on creeation of customer to indicate not paid
+    csa_subscription BOOLEAN
+);
 
 
 CREATE TABLE customers (
@@ -36,5 +37,6 @@ CREATE TABLE customers (
     -- csa_subscription BOOLEAN,
     -- Foreign keys
     address_id INT REFERENCES addresses(id),
-    delivery_day_id INT REFERENCES delivery_days(id)
+    delivery_day_id INT REFERENCES delivery_days(id),
+    subcription_id INT REFERENCES subscription(id)
 );

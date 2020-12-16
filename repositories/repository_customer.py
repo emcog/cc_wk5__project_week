@@ -4,50 +4,34 @@ from models.address import Address
 from models.customer import Customer
 
 
-# def drop_and_create():
-
-
-
-# create an address
-# assign a customer to an address
 
   #  ---------->
-    # Think about from perspective of form
-    # this handles data wherever it comes from and adds to tables
-    # this handles the passing of data to the database
+    # This handles data from wherever it comes from and adds to db / tables 
+    # Think about from perspective of where is comes from (form, csv, api
 
 
-# refactor into two functions
-def save(address,customer):
-    # takes in customer object
-    # address object
-    
+    # takes as many object as added to DB
+def save(address, delivery_day_id, csa_subscription_id, customer):
+
+    # todo refactor into separate functions
     sql_address = 'INSERT INTO addresses (first_line, second_line, town_city, postcode) VALUES (%s, %s, %s, %s) RETURNING *'
-    sql_customer = 'INSERT INTO customers (first_name, email, address_id) VALUES (%s, %s, %s) RETURNING *'
+    sql_customer = 'INSERT INTO customers (first_name, email, address_id, delivery_day_id) VALUES (%s, %s, %s, %s) RETURNING *'
 
     # list of object values passed to run sql function
-    values_address = [address.first_line, address.second_line, address.town_city, address.postcode]
+    values_address = [ address.first_line, address.second_line, address.town_city, address.postcode ]
  
-    # generate address results with sql command
+    # generate results with sql command
     address_results = run_sql(sql_address, values_address)
-    # get foreign key
+    
+    # get foreign keys
     address_id = address_results[0]['id']
+    
     # assign fk to customer
-    values_customer = [customer.first_name, customer.email, address_id]
+    values_customer = [customer.first_name, customer.email, address_id, delivery_day_id]
 
     # generate address results with sql command
     customer_results = run_sql(sql_customer, values_customer)
     #  ---> database should be updated
-
-
-    # refactor to two functions
-    # get console up and runnning
-    # test with customer 
-    # pass bo
-
-
-
-
 
 
 
@@ -66,9 +50,26 @@ def select_all():
 
 
 
+def select_by_day(delivery_day_id):
+    customers = []
+
+    sql = 'SELECT * FROM customers WHERE delivery_day_id = %s'
+    values =[delivery_day_id]
+    results = run_sql(sql, delivery_day_id)
+
+    for row in results:
+        # this depends on how its listed on init in class
+        #  def __init__( self, first_name, email, subscription_type = None, id = None ):
+        customer = Customer(row['first_name'], row['email'], row['subscription_type'], row['delivery_day_id'], row['id'])
+        customers.append(customer)
+    return customers
+
+
+
 
 
 def delete_all():
     sql_address = 'DELETE  FROM addresses'
+    sql_delivery_day = 'DELETE  FROM delivery_day'
     sql_customer = 'DELETE  FROM customers'
     run_sql(sql_address, sql_customer)
