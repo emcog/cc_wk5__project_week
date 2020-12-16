@@ -14,12 +14,14 @@ def vegboxes_to_harvest(day):
     # take day and convert to int, pass int
     # give me the idea of monday sql queries
 
+
     # if day == 'monday':
     #     delivery_day_id = 1
     # elif day == 'wednesday':
     #     delivery_day_id = 2
     # elif day == 'friday':
     #     delivery_day_id = 3
+
 
     delivery_day_id = repository_customer.get_delivery_day_id(day)
     # import pdb; pdb.set_trace()

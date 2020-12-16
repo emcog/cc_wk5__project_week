@@ -25,6 +25,8 @@ CREATE TABLE subscription (
     id SERIAL PRIMARY KEY,
     -- subscription
     -- pass Null on creeation of customer to indicate not paid
+    -- TODO change this boolean to int with a check value
+    -- SELECT ALL FROM CUSTOMER WHERE (subscription_id, delivery_day_id) =  (2, 1) 
     csa_subscription BOOLEAN
 );
 

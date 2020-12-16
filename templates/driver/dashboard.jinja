@@ -5,10 +5,19 @@
     <a href='/driver/friday'>Friday</a>
 {% endblock %}
 {% block content %}
-<h1>23</h1>
+<h1>Vegboxes to deliver today</h1>
 {{ total_vegboxes_for_today }}
+
+<h2>To</h2>
 {% for customer in todays_harvest %}
 <span>{{  customer.first_name }}</span>
+
+{# TODO #}
+{# address.first_line #}
+{# address.postcode #}
+
 {% endfor %}
 
 {% endblock %}
+
+
