@@ -83,7 +83,8 @@ def delete_all():
 
 
 def get_delivery_day_id(day):
-    # SELECT id FROM delivery_days WHERE day_of_week = 'monday'
+    # TODO update the hardcoding of 2 & 3 with variables
+    # sql = 'SELECT * FROM customers WHERE (delivery_day_id, subscription_id) = (%s, 2) OR (delivery_day_id, subscription_id) =  (%s, 3)'
     sql = 'SELECT id FROM delivery_days WHERE day_of_week = %s'
     values = [day]
     results = run_sql(sql, values)

@@ -6,10 +6,10 @@
 {% endblock %}
 {% block content %}
 <h1>Vegboxes to deliver today</h1>
-{{ total_vegboxes_for_today }}
+<span>{{ total_vegboxes_for_today }}</span>
 
 <h2>To</h2>
-{% for customer in todays_harvest %}
+{% for customer in todays_vegboxes %}
 <span>{{  customer.first_name }}</span>
 
 {# TODO #}

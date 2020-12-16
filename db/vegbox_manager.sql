@@ -34,8 +34,6 @@ CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255),
     first_name VARCHAR(255),
-    -- pass Null on creeation of customer to indicate not paid
-    -- csa_subscription BOOLEAN,
     -- Foreign keys
     address_id INT REFERENCES addresses(id),
     delivery_day_id INT REFERENCES delivery_days(id),
