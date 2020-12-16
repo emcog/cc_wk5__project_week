@@ -11,11 +11,11 @@ from models.customer import Customer
 
 
     # takes as many object as added to DB
-def save(address, delivery_day_id, csa_subscription_id, customer):
+def save(address, delivery_day_id, subscription_id, customer):
 
     # todo refactor into separate functions
     sql_address = 'INSERT INTO addresses (first_line, second_line, town_city, postcode) VALUES (%s, %s, %s, %s) RETURNING *'
-    sql_customer = 'INSERT INTO customers (first_name, email, address_id, delivery_day_id) VALUES (%s, %s, %s, %s) RETURNING *'
+    sql_customer = 'INSERT INTO customers (first_name, email, address_id, delivery_day_id, subscription_id) VALUES (%s, %s, %s, %s, %s) RETURNING *'
 
     # list of object values passed to run sql function
     values_address = [ address.first_line, address.second_line, address.town_city, address.postcode ]
@@ -27,7 +27,7 @@ def save(address, delivery_day_id, csa_subscription_id, customer):
     address_id = address_results[0]['id']
     
     # assign fk to customer
-    values_customer = [customer.first_name, customer.email, address_id, delivery_day_id]
+    values_customer = [customer.first_name, customer.email, address_id, delivery_day_id, subscription_id]
 
     # generate address results with sql command
     customer_results = run_sql(sql_customer, values_customer)

@@ -38,5 +38,5 @@ CREATE TABLE customers (
     -- Foreign keys
     address_id INT REFERENCES addresses(id),
     delivery_day_id INT REFERENCES delivery_days(id),
-    subcription_id INT REFERENCES subscription(id)
+    subscription_id INT REFERENCES subscription(id)
 );
