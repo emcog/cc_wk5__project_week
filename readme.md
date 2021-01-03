@@ -85,6 +85,11 @@ A drop off has a delivery day and an address
 
 
 ## Commands
+
+### Database
 Terminal:
     createdb <database>
     psql -d <database> -f <file> {{ psql -d vegbox -f db/vegbox_manager.sql }}
+
+### Run
+python3 app.py
