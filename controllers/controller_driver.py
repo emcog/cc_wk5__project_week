@@ -23,10 +23,11 @@ def vegboxes_today(day):
 
 # what is the working sql query which joins delivery with subscription type?
 
-SELECT * 
-FROM customers 
-JOIN addresses ON customers.address_id=addresses.id
-WHERE delivery_day_id = %s AND subscription_id = 1
+# --------------> this sql works
+# SELECT * 
+# FROM customers 
+# JOIN addresses ON customers.address_id=addresses.id
+# WHERE delivery_day_id = %s AND subscription_id = 1
 
 
 # what needs to be done to above to make it dynamic?
@@ -39,3 +40,14 @@ WHERE delivery_day_id = %s AND subscription_id = 1
 # need to make subscription_id dynamic therefore:
 # query db for subscription id or id's
 # could this use a 'does not equal?'
+# probably better to use update DB to 'is_currently_subscribed' true or false
+# and add column for subscription type
+# and subscription years
+# | type | year |
+    # 1     2023
+    # 2     2024
+    # 3     2025
+    # 
+
+    # https://stackoverflow.com/questions/23507200/good-practices-for-designing-monthly-subscription-system-in-database
+
