@@ -16,7 +16,7 @@ CREATE TABLE addresses (
 
 -- populate manually using postico
 CREATE TABLE delivery_days (
-    id SERIAL PRIMARY KEY,
+    delivery_day_id SERIAL PRIMARY KEY,
     day_of_week VARCHAR(255)
 );
 
@@ -30,12 +30,28 @@ CREATE TABLE subscription (
 );
 
 
+-- subscription_type replaces subscription
+CREATE TABLE subscription_types (
+    subscription_type_id SERIAL PRIMARY KEY,
+    subscription_type VARCHAR(255)
+);
+
+
 CREATE TABLE customers (
-    id SERIAL PRIMARY KEY,
+    customer_id SERIAL PRIMARY KEY,
     email VARCHAR(255),
     first_name VARCHAR(255),
     -- Foreign keys
     address_id INT REFERENCES addresses(id),
-    delivery_day_id INT REFERENCES delivery_days(id),
-    subscription_id INT REFERENCES subscription(id)
+    -- delivery_day_id INT REFERENCES delivery_days(id),
+    -- subscription_id INT REFERENCES subscription(id)
 );
+
+
+CREATE TABLE subscriptions (
+    subscription_id SERIAL PRIMARY KEY,
+    -- Foreign keys
+    customer_id INT REFERENCES customers(id)
+    delivery_day_id INT REFERENCES delivery_days(delivery_day_id)
+
+)
