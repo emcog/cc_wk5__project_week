@@ -30,10 +30,10 @@ def customers_by_day(day):
     # pass day_id to
     customers_today = repository_customer.select_by_day(day_id)
     total_vegboxes = repository_customer.total_veg_box_by_day(day_id)
-    return render_template('admin/day_view.jinja')
+    return render_template('admin/day_view.jinja', customers_today = customers_today, total_vegboxes = total_vegboxes)
 
 # Add customer
-@admin_blueprint.route('/admin/customers/add')
+@admin_blueprint.route('/admin', methods=['POST'])
 def add_customer():
     first_name  = request.form['first_name']
     email       = request.form['email']
@@ -41,16 +41,20 @@ def add_customer():
     customer    = Customer(first_name, email, address)
     repository_customer.save(customer)
     return redirect('/admin/customers/add') 
+    # return render_template('admin/add_customer.jinja')
 
 # Edit customer
-@admin_blueprint.route('/admin/customers/<id>', methods=['GET'])
-def edit_customer(id):
-    customer = repository_customer.select(id)
-    addresses = repository_address.select_all_addresses()
-    return render_template('admin/edit_customer.jinja', customer = customer, addresses = addresses )
+# @admin_blueprint.route('/admin/customers/<id>', methods=['GET'])
+# def edit_customer(id):
+#     customer = repository_customer.select(id)
+#     addresses = repository_address.select_all_addresses()
+#     return render_template('admin/edit_customer.jinja', customer = customer, addresses = addresses )
+
+
+# Delete customer
+# @admin_blueprint.route()
 
 # customer_edit: GET
-# customer_delete: GET
 # notes_add: POST
 # notes_edit: GET
 # notes_delete: GET

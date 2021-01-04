@@ -6,3 +6,8 @@ class Address:
         self.town_city = town_city
         self.postcode = postcode
         self.id = id
+
+
+    def full_address(self):
+        return f"{self.first_line} {self.second_line} {self.town_city} {self.postcode}"
+

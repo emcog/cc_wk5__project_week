@@ -3,8 +3,6 @@ from db.run_sql import run_sql
 from models.address import Address
 from models.customer import Customer
 
-
-
   #  ---------->
     # This handles data from wherever it comes from and adds to db / tables 
     # Think about from perspective of where is comes from (form, csv, api
@@ -71,7 +69,6 @@ def total_veg_box_by_day(delivery_day_id):
     results = run_sql(sql, values)
     # returns a dictionary, ['count'] references column name
     return results[0]['count']
-
 
 
 

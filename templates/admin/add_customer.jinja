@@ -1,0 +1,24 @@
+<h2>Add customer</h2>
+
+<form action='/customers' method='POST'>
+    <div>
+        <label for='first_name'>First name</label>
+        <input type='text' id='first_name' name='first_name' placeholder='First name' required autofocus>
+    </div>
+    
+    <div>
+        <label for='email'>Email</label>
+        <input type='text' id='email' name='email' placeholder='Email' required autofocus>
+    </div>
+
+    <div>
+        <label for='address'>Address</label>
+        <select id='address' name='address_id'>
+            {% for address in addresses %}
+                <option value='{{ address.id }}'> {{ address.full_address() }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button type='submit'>Add customer</button>
+</form>

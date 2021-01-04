@@ -1,12 +1,15 @@
 {% extends "base.jinja" %}
 
 {% block content %}
-<span>
-Hey Admin,
-</span>
-<span>
-TODO: call the developer and get them to add some RESTful forms to update customers info
-</span
+
+{# admin specific nav #}
+{% include '/admin/nav_admin.jinja' %}
+
+{# customer list #}
+{% include '/admin/list_customers.jinja' %}
+
+{# add customer #}
+{% include '/admin/add_customer.jinja' %}
 
 
 {% endblock %}

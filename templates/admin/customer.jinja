@@ -1,0 +1,34 @@
+<article>
+    {# <img>profile</img> #}
+    <span>{{ first_name }}</span>
+    <span>{{ email }}</span>
+    <span>{{ delivery_day }}</span>
+    <span>{{ start_subscription }}</span>
+    <span>{{ end_subscription }}</span>
+</article>
+
+<article>
+    {# <img>safe_place</img> #}
+    <span>{{ address_fist_line }}</span>
+    <span>{{ address_second_line }}</span>
+    <span>{{ town_city }}</span>
+    <span>{{ postcode }}</span>
+</article>
+
+<article>
+    <span>{{ date_created }}</span>
+    <p>{{ note_to_driver }}<p>
+    <span>{{ valid_from }}</span>
+    <span>{{ valid_to }}</span>
+</article>
+
+<article>
+    <p>{{ note_to_customer }}</p>
+</article>
+
+
+
+
+<form class='delete-form' action='/customers/{{ customer.id }}/delete' method='POST'>
+    <button class='delete-button'>Delete</button>
+</form>

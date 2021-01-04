@@ -1,0 +1,15 @@
+<h2>Customer list</h2>
+    <ul>
+        {% for customer in all_customers %}
+            <li>
+                <span>{{ customer.first_name }}</span>
+                <span>{{ customer.email }}</span>
+                <span>{{ customer.delivery_day }}</span>
+                <span>{{ customer.note_to_driver }}</span>
+                <span>{{ customer.note_to_customer }}</span>
+                <span>{{ customer.start_subscription }}</span>
+                <span>{{ customer.end_subscription }}</span>
+                <a href='/admin/customers/<id>'>edit</a>
+            </li>
+        {% endfor%}
+    </ul>

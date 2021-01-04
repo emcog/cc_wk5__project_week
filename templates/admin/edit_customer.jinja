@@ -1,0 +1,26 @@
+<form action='/customers/{{customer.id}}' method='POST'>
+    <div>
+        <label for='first_name'>First name</label>
+        <input type='text' id='first_name' value='customer.first_name' required>
+    </div>
+    
+    <div>
+        <label for='email'>Email</label>
+        <input type='text' id='email' value='customer.email' required>
+    </div>
+
+    <div>
+        <label for='address'>Address</label>
+        <select id='address' name='address_id'>
+            {% for address in addresses %}
+                <option value='{{ address.id }}'
+                    {% if customer.address.id == address.id %} selected='selected'{% endif %}>
+                    {# TODO update address class to contain method to show full_address() #}
+                    {{ address.full_address() }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button type='submit'>Update Customer</button>
+</form>
